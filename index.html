@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance Baseline - Founder-Level Compliance Readiness</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #ffffff;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .logo-icon::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 3px solid white;
+            border-radius: 4px;
+        }
+        
+        .logo-icon::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            padding: 60px 20px;
+            background: #f8fafc;
+        }
+        
+        .benefits h2 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 40px;
+        }
+        
+        .benefit-list {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .checkmark {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .checkmark::after {
+            content: '✓';
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .benefit-text {
+            font-size: 16px;
+            color: #475569;
+            line-height: 1.6;
+        }
+        
+        .benefit-text strong {
+            color: #1e293b;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .pricing h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 16px;
+        }
+        
+        .price {
+            font-size: 56px;
+            font-weight: 800;
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+        
+        .price-note {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+        
+        .feature-list {
+            max-width: 500px;
+            margin: 0 auto 32px;
+            text-align: left;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .feature-item .checkmark {
+            width: 22px;
+            height: 22px;
+        }
+        
+        .feature-item .checkmark::after {
+            font-size: 12px;
+        }
+        
+        .feature-text {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.5;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #e8e8e8;
+            color: #6b7280;
+            font-size: 14px;
+        }
+        
+        footer a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+            
+            .price {
+                font-size: 44px;
+            }
+            
+            .benefits h2,
+            .pricing h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">Compliance Baseline</div>
+            </div>
+        </header>
+        
+        <section class="hero">
+            <h1>Founder-Level Compliance Readiness — Before Customers or Vendors Ask</h1>
+            <p class="subtitle">A practical, no-fluff checklist to identify common operational and compliance gaps before enterprise buyers, partners, or procurement teams raise them.</p>
+            <a href="https://buy.stripe.com/test_5kQdR1dGA1HUfWjfGX0gw00" class="cta-button">Get the Checklist</a>
+        </section>
+        
+        <section class="benefits">
+            <h2>Key Benefits of the Checklist</h2>
+            <div class="benefit-list">
+                <div class="benefit-item">
+                    <div class="checkmark"></div>
+                    <div class="benefit-text"><strong>Proactively</strong> identify compliance and operational gaps</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="checkmark"></div>
+                    <div class="benefit-text"><strong>Streamline</strong> procurement and vendor approvals</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="checkmark"></div>
+                    <div class="benefit-text">Enhance credibility with enterprise buyers</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="pricing" id="purchase">
+            <h2>Get Instant Access — Limited-Time Offer</h2>
+            <div class="price">$59</div>
+            <p class="price-note">(Regularly $89 — limited-time launch pricing)</p>
+            
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="checkmark"></div>
+                    <div class="feature-text">Comprehensive compliance checklist covering essential operational and regulatory areas</div>
+                </div>
+                <div class="feature-item">
+                    <div class="checkmark"></div>
+                    <div class="feature-text">Practical guidance to meet vendor and enterprise buyer requirements</div>
+                </div>
+                <div class="feature-item">
+                    <div class="checkmark"></div>
+                    <div class="feature-text">Immediate digital download after purchase</div>
+                </div>
+            </div>
+            
+            <a href="https://buy.stripe.com/test_5kQdR1dGA1HUfWjfGX0gw00" class="cta-button">Get the Checklist</a>
+        </section>
+        
+        <footer>
+            <p>© 2026 Compliance Baseline · <a href="/cdn-cgi/l/email-protection#a4d7d1d4d4cbd6d0e4c7cbc9d4c8cdc5cac7c1c6c5d7c1c8cdcac18ac7cbc9"><span class="__cf_email__" data
